@@ -17,13 +17,8 @@ struct FruitDetailView: View {
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
           // HEADER
-//          Image(fruit.image)
-//            .resizable()
-//            .scaledToFit()
-//            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 8, x: 6, y: 8)
-//            .background(
-//              LinearGradient(gradient: Gradient(colors: fruit.gradientColors), startPoint: .top, endPoint: .bottom)
-//            )
+          FruitHeaderView(fruit: fruit)
+          
           VStack(alignment: .leading, spacing: 20) {
             // TITLE
             Text(fruit.title)
@@ -37,6 +32,7 @@ struct FruitDetailView: View {
               .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
             
             // NUTRIENTS
+            
               
             // SUBHEADLINE
             Text("Learn more about \(fruit.title)".uppercased())
@@ -48,12 +44,18 @@ struct FruitDetailView: View {
               .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
             
             // LINK
+            SourceLinkView()
+              .padding(.top, 10)
+              .padding(.bottom, 40)
             
           } //: VSTACK
           .padding(.horizontal, 20)
           .frame(maxWidth: 640, alignment: .center)
         } //: VSTACK
+        .navigationBarTitle(fruit.title, displayMode: .inline)
+        .navigationBarHidden(true)
       } //: SCROLL
+      .edgesIgnoringSafeArea(.top)
     } //: NAVIGATION
   }
 }
