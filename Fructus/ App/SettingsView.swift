@@ -73,7 +73,7 @@ struct SettingsView: View {
             label:
               SettingsLabelView(labelText: "APPLICATION", labelImage: "apps.iphone")
           ) {
-            SettingsRowView(name: "Developer", content: "John / Jane")
+            SettingsRowView(name: "Developer", content: "Joshua Basche")
             SettingsRowView(name: "Designer", content: "Joshua Basche")
             SettingsRowView(name: "Compatibility", content: "iOS 14")
             SettingsRowView(name: "Website", linkLabel: "SwiftUI Masterclass", linkDestination: "swiftuimasterclass.com")
